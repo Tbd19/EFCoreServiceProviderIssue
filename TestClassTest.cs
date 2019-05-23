@@ -32,7 +32,14 @@ namespace ConsoleApp2
              async () =>
              {
                 int count = await testDatabaseContext.TestClasses.CountAsync().ConfigureAwait(false);
-                Console.WriteLine("The count is = " + count);
+                if (withServiceProvider)
+                {
+                  Console.WriteLine("The count with Service Provider is = " + count);
+                }
+                else
+                {
+                   Console.WriteLine("The count without Service Provider is = " + count);
+                }
              },
              withServiceProvider).ConfigureAwait(false);
       }

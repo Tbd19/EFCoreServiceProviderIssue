@@ -16,7 +16,6 @@ namespace ConsoleApp2
          {
             var serviceProvider = new ServiceCollection()
                .AddEntityFrameworkInMemoryDatabase()
-               ////.AddSingleton(typeof(IDeviceAuditTrailService), AuditTrailService)
                .BuildServiceProvider();
 
             options = new DbContextOptionsBuilder<TestContext>()
